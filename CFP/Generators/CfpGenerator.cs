@@ -67,7 +67,7 @@ namespace c19t.SDK.CFP.Generators
 
         private string CreateCfpKey(string procedureCode, string personalCode, string personalData)
         {
-            return $"{personalCode}{StringConstants.Separator}{personalData}{StringConstants.Separator}{procedureCode}";
+            return $"{procedureCode}{StringConstants.Separator}{personalData}{StringConstants.Separator}{personalCode}";
         }
 
         #endregion
