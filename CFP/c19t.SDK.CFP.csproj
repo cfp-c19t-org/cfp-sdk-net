@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/cfp-c19t-org/cfp-sdk-net</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>C19T</Company>
+    <Authors>dbigler</Authors>
+    <Description>.NET SDK for the c19t Covid-Free-Pass</Description>
+    <RepositoryUrl>https://github.com/cfp-c19t-org/cfp-sdk-net</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
