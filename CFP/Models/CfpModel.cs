@@ -6,10 +6,13 @@
 
         public string Hash { get; internal set; }
 
-        public CfpModel(string clearTextCfp, string hash)
+        public CfpProcedure Procedure { get; internal set; }
+
+        public CfpModel(string clearTextCfp, string hash, CfpProcedure procedure)
         {
             ClearTextCfp = clearTextCfp;
             Hash = hash;
+            Procedure = procedure;
         }
     }
 }

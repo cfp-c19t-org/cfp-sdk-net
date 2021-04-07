@@ -20,7 +20,7 @@ namespace c19t.SDK.CFP.Generators
             string cfpKey = CreateCfpKey("0000", personalCode, idNumber);
             string hash = $"0x{_keccak.Hash(cfpKey)}";
 
-            return new CfpModel(cfpKey, hash);
+            return new CfpModel(cfpKey, hash, CfpProcedure.GenericProcedure0000);
         }
 
         public CfpModel GenerateCfpBy0001Procedure(string personalCode, string firstname, string lastname)
@@ -30,7 +30,7 @@ namespace c19t.SDK.CFP.Generators
             string cfpKey = CreateCfpKey("0001", personalCode, personalData);
             string hash = $"0x{_keccak.Hash(cfpKey)}";
 
-            return new CfpModel(cfpKey, hash);
+            return new CfpModel(cfpKey, hash, CfpProcedure.FirstnameLastnameProcedure0001);
         }
 
         public CfpModel GenerateCfpBy0002Procedure(string personalCode, string firstname, string lastname, DateTime dateOfBirth)
@@ -40,7 +40,7 @@ namespace c19t.SDK.CFP.Generators
             string cfpKey = CreateCfpKey("0002", personalCode, personalData);
             string hash = $"0x{_keccak.Hash(cfpKey)}";
 
-            return new CfpModel(cfpKey, hash);
+            return new CfpModel(cfpKey, hash, CfpProcedure.FirstnameLastnameDoBProcedure0002);
         }
 
         public CfpModel GenerateCfpBy0003Procedure(string personalCode, string firstname, string lastname, DateTime dateOfBirth, string idNumber)
@@ -50,7 +50,7 @@ namespace c19t.SDK.CFP.Generators
             string cfpKey = CreateCfpKey("0003", personalCode, personalData);
             string hash = $"0x{_keccak.Hash(cfpKey)}";
 
-            return new CfpModel(cfpKey, hash);
+            return new CfpModel(cfpKey, hash, CfpProcedure.FirstnameLastnameDoBIdNumberProcedure0003);
         }
 
         public CfpModel GenerateCfpBy0004Procedure(string personalCode, string firstname, string lastname, DateTime dateOfBirth, string taxId)
@@ -60,7 +60,7 @@ namespace c19t.SDK.CFP.Generators
             string cfpKey = CreateCfpKey("0004", personalCode, personalData);
             string hash = $"0x{_keccak.Hash(cfpKey)}";
 
-            return new CfpModel(cfpKey, hash);
+            return new CfpModel(cfpKey, hash, CfpProcedure.FirstnameLastnameDoBTaxIdProcedure0004);
         }
 
         #region Private helpers
