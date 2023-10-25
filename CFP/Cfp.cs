@@ -45,6 +45,8 @@ namespace c19t.SDK.CFP
                     return _generator.GenerateCfpBy0003Procedure(personalCode, personalData.Firstname, personalData.Lastname, personalData.DateOfBirth.Value, personalData.IdNumber);
                 case CfpProcedure.FirstnameLastnameDoBTaxIdProcedure0004:
                     return _generator.GenerateCfpBy0004Procedure(personalCode, personalData.Firstname, personalData.Lastname, personalData.DateOfBirth.Value, personalData.TaxId);
+                case CfpProcedure.DigitalIDStartDateProcedure0005:
+                    return _generator.GenerateCfpBy0005Procedure(personalCode, personalData.IdNumber, personalData.DateOfBirth.Value);
 
                 // default case = generic procedure
                 case CfpProcedure.GenericProcedure0000:
@@ -60,7 +62,12 @@ namespace c19t.SDK.CFP
         /// <returns> CFP procedure code </returns>
         private CfpProcedure AutodetectProcedure(CfpPii pii)
         {
-            if (!string.IsNullOrWhiteSpace(pii.IdNumber))
+            if (!string.IsNullOrWhiteSpace(pii.IdNumber)
+                        && pii.DateOfBirth.HasValue && pii.DateOfBirth != default)
+            {
+                return CfpProcedure.DigitalIDStartDateProcedure0005;
+            }
+            else if (!string.IsNullOrWhiteSpace(pii.IdNumber))
             {
                 return CfpProcedure.GenericProcedure0000;
             }

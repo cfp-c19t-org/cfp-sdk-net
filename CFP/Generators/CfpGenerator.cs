@@ -63,6 +63,16 @@ namespace c19t.SDK.CFP.Generators
             return new CfpModel(cfpKey, hash, CfpProcedure.FirstnameLastnameDoBTaxIdProcedure0004);
         }
 
+        public CfpModel GenerateCfpBy0005Procedure(string personalCode, string idNumber, DateTime dateOfBirth)
+        {
+            string personalData = $"{idNumber}{StringConstants.Separator}{dateOfBirth:yyyy-MM-dd}";
+
+            string cfpKey = CreateCfpKey("0004", personalCode, personalData);
+            string hash = $"0x{_keccak.Hash(cfpKey)}";
+
+            return new CfpModel(cfpKey, hash, CfpProcedure.DigitalIDStartDateProcedure0005);
+        }
+
         #region Private helpers
 
         private string CreateCfpKey(string procedureCode, string personalCode, string personalData)

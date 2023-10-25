@@ -8,7 +8,7 @@
     <Authors>dbigler</Authors>
     <Description>.NET SDK for the c19t Covid-Free-Pass</Description>
     <RepositoryUrl>https://github.com/cfp-c19t-org/cfp-sdk-net</RepositoryUrl>
-    <Version>1.0.1</Version>
+    <Version>1.1.1</Version>
   </PropertyGroup>
 
 </Project>
