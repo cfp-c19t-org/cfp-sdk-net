@@ -25,6 +25,11 @@
         /// <summary>
         /// Procedure to create CFP with firstname, lastname, date of birth and tax number
         /// </summary>
-        FirstnameLastnameDoBTaxIdProcedure0004 = 4
+        FirstnameLastnameDoBTaxIdProcedure0004 = 4,
+
+        /// <summary>
+        /// Procedure to create CFP with digitalId and start date
+        /// </summary>
+        DigitalIDStartDateProcedure0005 = 5,
     }
 }

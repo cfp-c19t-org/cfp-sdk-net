@@ -44,6 +44,13 @@ namespace c19t.SDK.CFP.Validators
                 && data.DateOfBirth.Value != default
                 && !string.IsNullOrWhiteSpace(data.TaxId);
         }
+        public bool Validate0005Pii(CfpPii data)
+        {
+            return !string.IsNullOrWhiteSpace(data.IdNumber)
+                && data.DateOfBirth.HasValue
+                && data.DateOfBirth.Value != default;
+        }
+
 
         public bool ValidatePii(CfpPii data, CfpProcedure procedure)
         {
@@ -57,6 +64,8 @@ namespace c19t.SDK.CFP.Validators
                     return Validate0003Pii(data);
                 case CfpProcedure.FirstnameLastnameDoBTaxIdProcedure0004:
                     return Validate0004Pii(data);
+                case CfpProcedure.DigitalIDStartDateProcedure0005:
+                    return Validate0005Pii(data);
                 case CfpProcedure.GenericProcedure0000:
                 default:
                     return Validate0000Pii(data);
